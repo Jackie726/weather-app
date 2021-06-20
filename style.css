@@ -1,0 +1,19 @@
+body {
+  font-family: "Oxygen";
+}
+h1,
+h2,
+h3 {
+  text-align: right;
+}
+.today-icon {
+  text-align: left;
+  font-size: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.icon {
+  text-align: center;
+  font-size: 50px;
+}
