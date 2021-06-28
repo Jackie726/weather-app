@@ -4,9 +4,7 @@ let h4 = document.querySelector("h4");
 
 let date = now.getDate();
 let hours = now.getHours();
-}
 let minutes = now.getMinutes();
-}
 let year = now.getFullYear();
 
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -46,7 +44,6 @@ function handleSubmit(event) {
 
 let citySubmit = document.querySelector("#city-form");
 citySubmit.addEventListener("submit", handleSubmit);
-
 
 function getForecast(coordinates) {
   let apiKey = "14173e5564951d4cb844af11f4f30d7b";
