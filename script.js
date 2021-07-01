@@ -27,23 +27,42 @@ let months = [
 let month = months[now.getMonth()];
 h4.innerHTML = `${day} ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
-function displayWeather(response) {
-  document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#currentTemp").innerHTML = Math.round(
-    response.data.main.temp
-  );
-}
+function displayForecast(response) {
+  let forecast = response.data.daily;
 
-function handleSubmit(event) {
-  event.preventDefault();
-  let apiKey = "14173e5564951d4cb844af11f4f30d7b";
-  let city = document.querySelector("#city-name").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
+  let forecastElement = document.querySelector("#forecast");
 
-let citySubmit = document.querySelector("#city-form");
-citySubmit.addEventListener("submit", handleSubmit);
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
+        </div>
+      </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function getForecast(coordinates) {
   let apiKey = "14173e5564951d4cb844af11f4f30d7b";
@@ -52,8 +71,8 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
-  let cityElement = document.querySelector("#city-name");
   let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -82,5 +101,14 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-name-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 search("Philadelphia");
