@@ -91,3 +91,6 @@ li:first-letter {
 .weather-forecast-temperatures {
   font-size: 13px;
 }
+.slug {
+  margin-bottom: 0;
+}
