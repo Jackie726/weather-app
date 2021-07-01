@@ -37,7 +37,7 @@ function searchCity(city) {
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city-name");
+  let cityElement = document.querySelector("#city-name-input");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
