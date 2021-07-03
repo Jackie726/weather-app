@@ -117,16 +117,16 @@ function convertToFahrenheit(event) {
   celciusLink.classList.remove("#active");
   fahrenheitLink.classList.add("#active");
   let fahrenheitTemperature = (celcsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let currentTemp = document.querySelector("#temperature");
+  currentTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function convertToCelcius(event) {
   event.preventDefault();
   celciusLink.classList.add("#active");
   fahrenheitLink.classList.remove("#active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celcsiusTemperature);
+  let currentTemp = document.querySelector("#temperature");
+  currentTemp.innerHTML = Math.round(celcsiusTemperature);
 }
 
 let celcsiusTemperature = null;
