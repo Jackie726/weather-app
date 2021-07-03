@@ -118,4 +118,29 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+function displayFahrenteit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrenheit = document.querySelector("#fahrenheitLink");
+fahrenheit.addEventListener("click", displayFahrenteit);
+
+let celsius = document.querySelector("#celsiusLink");
+celsius.addEventListener("click", displayCelsius);
+
 search("Philadelphia");
