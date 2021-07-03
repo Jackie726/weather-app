@@ -132,7 +132,6 @@ function displayCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  tempElement.innerHTML = Math.round(celsiusTemp);
   document.querySelector("#temperature").innerHTML = Math.round(celciusTemp);
 }
 let celsiusTemp = null;
