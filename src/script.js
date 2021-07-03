@@ -137,9 +137,9 @@ function displayCelsius(event) {
 let celsiusTemp = null;
 
 let fahrenheit = document.querySelector("#fahrenheitLink");
-fahrenheit.addEventListener("click", displayFahrenteit);
+fahrenheit.addEventListener("click", showFahrenteit);
 
 let celsius = document.querySelector("#celsiusLink");
-celsius.addEventListener("click", displayCelsius);
+celsius.addEventListener("click", showCelsius);
 
 search("Philadelphia");
