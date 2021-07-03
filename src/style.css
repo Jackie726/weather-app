@@ -28,7 +28,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 .icon {
-  width: 50%;
+  font-size: 32px;
 }
 .weather-app-wrapper {
   max-width: 600px;
