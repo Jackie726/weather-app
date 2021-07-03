@@ -39,6 +39,11 @@ li:first-letter {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background: linear-gradient(
+    359deg,
+    rgb(150, 192, 255) -17.7%,
+    rgb(255, 180, 161) 101.5%
+  );
 }
 
 .overview {
