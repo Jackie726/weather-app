@@ -114,22 +114,22 @@ function handleSubmit(event) {
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  celciusLink.classList.remove("#active");
+  celsiusLink.classList.remove("#active");
   fahrenheitLink.classList.add("#active");
-  let fahrenheitTemperature = (celcsiusTemperature * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let currentTemp = document.querySelector("#temperature");
   currentTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function convertToCelcius(event) {
+function convertToCelsius(event) {
   event.preventDefault();
-  celciusLink.classList.add("#active");
+  celsiusLink.classList.add("#active");
   fahrenheitLink.classList.remove("#active");
   let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = Math.round(celcsiusTemperature);
+  currentTemp.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celcsiusTemperature = null;
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -137,7 +137,7 @@ form.addEventListener("submit", handleSubmit);
 let fahrenheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-let celciusLink = document.querySelector("#celsiusLink");
-celciusLink.addEventListener("click", convertToCelcius);
+let celsiusLink = document.querySelector("#celsiusLink");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Philadelphia");
