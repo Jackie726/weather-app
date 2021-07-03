@@ -111,9 +111,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   celciusLink.classList.remove("#active");
@@ -132,6 +129,9 @@ function convertToCelcius(event) {
 }
 
 let celcsiusTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
