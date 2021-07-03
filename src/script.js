@@ -119,29 +119,29 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-function displayFahrenteit(event) {
+function convertToFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-  document.querySelector("#temperature").innerHTML = Math.round(fahrenheitTemp);
+  celciusLink.classList.remove("#active");
+  fahrenheitLink.classList.add("#active");
+  let fahrenheitTemperature = (celcsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function displayCelsius(event) {
+function convertToCelcius(event) {
   event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-  document.querySelector("#temperature").innerHTML = Math.round(celciusTemp);
+  celciusLink.classList.add("#active");
+  fahrenheitLink.classList.remove("#active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celcsiusTemperature);
 }
 
-let celsiusTemp = null;
+let celcsiusTemperature = null;
 
-let fahrenheit = document.querySelector("#fahrenheitLink");
-fahrenheit.addEventListener("click", displayFahrenteit);
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-let celsius = document.querySelector("#celsiusLink");
-celsius.addEventListener("click", displayCelsius);
+let celciusLink = document.querySelector("#celsiusLink");
+celciusLink.addEventListener("click", convertToCelcius);
 
 search("Philadelphia");
