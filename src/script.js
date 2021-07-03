@@ -125,8 +125,6 @@ function displayFahrenteit(event) {
   fahrenheitLink.classList.add("active");
   document.querySelector("#temperature").innerHTML = Math.round(fahrenheitTemp);
   tempElement.innerHTML = Math.round(fahrenheitTemp);
-  unit = "imperial";
-  getForecast(searchInput);
 }
 
 function displayCelsius(event) {
@@ -135,16 +133,14 @@ function displayCelsius(event) {
   fahrenheitLink.classList.remove("active");
   tempElement.innerHTML = Math.round(celsiusTemp);
   document.querySelector("#temperature").innerHTML = Math.round(celciusTemp);
-  unit = "metric";
-  getForecast(searchInput);
 }
 
 let celsiusTemp = null;
 
 let fahrenheit = document.querySelector("#fahrenheitLink");
-fahrenheit.addEventListener("click", getFahrenheit);
+fahrenheit.addEventListener("click", displayFahrenteit);
 
 let celsius = document.querySelector("#celsiusLink");
-celsius.addEventListener("click", getCelcius);
+celsius.addEventListener("click", displayCelsius);
 
 search("Philadelphia");
