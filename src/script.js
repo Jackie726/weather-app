@@ -120,20 +120,22 @@ form.addEventListener("submit", handleSubmit);
 
 function displayFahrenteit(event) {
   event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  document.querySelector("#temperature").innerHTML = Math.round(fahrenheitTemp);
+
   tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function displayCelsius(event) {
   event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   tempElement.innerHTML = Math.round(celsiusTemp);
+  document.querySelector("#temperature").innerHTML = Math.round(celciusTemp);
 }
+let celsiusTemp = null;
 
 let fahrenheit = document.querySelector("#fahrenheitLink");
 fahrenheit.addEventListener("click", displayFahrenteit);
