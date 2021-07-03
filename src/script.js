@@ -135,8 +135,6 @@ function displayCelsius(event) {
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
-let celsiusTemp = null;
-
 let fahrenheit = document.querySelector("#fahrenheitLink");
 fahrenheit.addEventListener("click", displayFahrenteit);
 
