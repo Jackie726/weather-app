@@ -20,6 +20,10 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
+  let AM_PM = now.getHours() > 11 && now.getHours() < 24 ? `PM` : `AM`;
+  document.querySelector(
+    "#todayDate"
+  ).innerHTML = `${day} ${hour}:${minute} ${AM_PM}`;
 }
 
 function formatDay(timestamp) {
